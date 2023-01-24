@@ -1,0 +1,31 @@
+name: "CI debug builder"
+
+on: [push, pull_request]
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  build:
+    name: Debug builds
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Rust toolchain
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+
+      - name: Build debug artifact
+        uses: actions-rs/cargo@v1
+        with:
+          command: build
+          args: --locked --all-features --all
+
+      - name: Upload finished artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: OPL-VM
+          path: target/debug/opl
