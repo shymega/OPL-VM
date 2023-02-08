@@ -1,4 +1,4 @@
-name: "CI debug builder"
+name: OPL VM Debug builder workflow
 
 on: [push, pull_request]
 
@@ -7,25 +7,26 @@ env:
 
 jobs:
   build:
-    name: Debug builds
+    name: Build job
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Setup Rust toolchain
+      - name: Setup Rust (stable) toolchain
         uses: actions-rs/toolchain@v1
         with:
           toolchain: stable
 
-      - name: Build debug artifact
+      - name: Build in debug mode
         uses: actions-rs/cargo@v1
         with:
           command: build
-          args: --locked --all-features --all
+          args: --locked --all
 
-      - name: Upload finished artifact
+      - name: Upload debug build artefact
         uses: actions/upload-artifact@v3
         with:
-          name: OPL-VM
-          path: target/debug/opl
+          name: OPL-VM-Debug
+          path: |
+            target/debug/opl
