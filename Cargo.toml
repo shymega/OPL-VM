@@ -13,7 +13,7 @@ name = "opl"
 [dependencies]
 anyhow = "1.0.69"
 byteorder = "1.4.3"
-clap = "4.1.8"
+clap = "4.1.11"
 env_logger = "0.10.0"
 futures = "0.3.27"
 log = "0.4.17"
