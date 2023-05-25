@@ -3,7 +3,7 @@
     warnings,
     missing_copy_implementations,
     missing_debug_implementations,
-//    missing_docs,
+    missing_docs,
     clippy::all,
     clippy::pedantic,
     clippy::cargo,
