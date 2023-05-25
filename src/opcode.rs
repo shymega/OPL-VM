@@ -12,10 +12,10 @@ pub enum Opcode {
     /// Move (MOV) - move a value to a register.
     /// Accepts two values: register ID, value (as `u8` array)
     /// Register ID example: `oax`.
-    MOV = 0x3(i16, &[u8]),
+    MOV = 0x3,
     /// GRAb - dynamically grab a variable from a register.
     /// Accepts one value - register ID - such as `oax`
-    GRB = 0x4(i16),
+    GRB = 0x4,
 }
 
 impl Default for Opcode {
