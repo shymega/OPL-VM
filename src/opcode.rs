@@ -9,13 +9,13 @@ pub enum Opcode {
     IGL = 0x1,
     /// No Operation - do nothing.
     NOP = 0x2,
-    /// STOre Integer - store a 16-bit integer in a register. 
-    /// Accepts two values, an 16-bit integer and a register ID.
-    /// Registry ID example: `oax`.
-    STO = 0x3,
-    /// GRAb - dynamically grab a variable from a register. 
+    /// Move (MOV) - move a value to a register.
+    /// Accepts two values: register ID, value (as `u8` array)
+    /// Register ID example: `oax`.
+    MOV = 0x3(i16, &[u8]),
+    /// GRAb - dynamically grab a variable from a register.
     /// Accepts one value - register ID - such as `oax`
-    GRA = 0x4,
+    GRB = 0x4(i16),
 }
 
 impl Default for Opcode {
