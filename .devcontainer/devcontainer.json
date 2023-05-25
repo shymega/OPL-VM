@@ -1,8 +1,8 @@
 {
-	"name": "SuperPrint Development Environment",
-	"image": "mcr.microsoft.com/devcontainers/rust:bullseye",
-    "extensions": [
-        "Zerotaskx.rust-extension-pack"
-    ],
-	"postCreateCommand": "rustc --version"
+  "name": "SuperPrint Development Environment",
+  "image": "mcr.microsoft.com/devcontainers/rust:bullseye",
+  "extensions": [
+    "Zerotaskx.rust-extension-pack"
+  ],
+  "postCreateCommand": "rustc --version"
 }
